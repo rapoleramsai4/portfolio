@@ -1,8 +1,7 @@
 # build output
+.next/
+out/
 dist/
-
-# generated types
-.astro/
 
 # dependencies
 node_modules/
@@ -15,10 +14,20 @@ pnpm-debug.log*
 
 # environment variables
 .env
-.env.production
+.env*.local
+.dev.vars
 
 # macOS-specific files
 .DS_Store
 
 # jetbrains setting folder
 .idea/
+
+# typescript
+next-env.d.ts
+*.tsbuildinfo
+
+# cloudflare / opennext
+.open-next/
+.wrangler/
+worker-configuration.d.ts
