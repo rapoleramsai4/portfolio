@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
 
 const nextConfig: NextConfig = {
+  output: "standalone",
   images: {
     // No Cloudflare Images binding is configured, so skip automatic
     // optimization. See https://opennext.js.org/cloudflare/howtos/image
