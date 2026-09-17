@@ -1,26 +1,28 @@
-// Placeholder content ported from the previous single-page site.
-// TODO(user): replace with your real name, bio, experience, skills, and links.
-
 export const profile = {
   name: "Ramsai Rapole",
   logo: "RAMSAI",
-  title: "Full-Stack Developer",
-  description: "Full-Stack Developer",
+  title: "AI & Software Developer",
+  description:
+    "Software Developer with 3+ years of experience architecting enterprise grade Agentic AI systems, NL2SQL platforms, and high performance Retrieval Augmented Generation (RAG) pipelines.",
   roles: [
+    "AI Developer",
+    "Software Developer",
+    "Agentic AI Engineer",
     "Full-Stack Developer",
-    "Software Engineer",
-    "Web Developer",
-    "AI Engineer",
   ],
   bio: [
     "Welcome!",
-    "I am a Full-stack Developer with 3+ years of hands-on experience, specializing in frontend engineering and building AI-powered voice and communication platforms for modern SaaS products. As a Founding Engineer, I've led product development from scratch to deployment, owning the entire frontend stack while also contributing to backend, DevOps, and AI voice agent systems.",
+    "I am a Software Developer with 3+ years of experience architecting enterprise grade Agentic AI systems, NL2SQL platforms, and high performance Retrieval Augmented Generation (RAG) pipelines.",
+    "I specialize in building production ready autonomous workflows using LangGraph, ReAct loops, and Model Context Protocol (MCP), backed by scalable OLAP engines (DuckDB, ClickHouse) and vector databases (Qdrant, Redis HNSW). Skilled in full stack orchestration with Python (FastAPI) and modern frontends, integrating end to end LLM observability via LangSmith, and deploying secure, multi-tenant GenAI solutions via GitOps and Kubernetes.",
   ],
-  quote: "If it runs in production, I've probably touched it.",
+  quote:
+    "Building autonomous agentic workflows and production AI platforms has shown me that reliability, deterministic guardrails, and low-latency data pipelines are what turn AI into real business value.",
   links: {
-    linkedin: "https://www.linkedin.com/in/rapoleramsai/",
-    github: "https://github.com/rapoleramsai4",
+    linkedin: "https://www.linkedin.com/in/rapoleramsai",
+    github: "https://github.com/rapoler",
     email: "rapoleramsai4@gmail.com",
+    phone: "+91 9652110222",
+    website: "https://rapoleramsai.online",
     resume: "/Resume.pdf",
   },
 };
@@ -28,97 +30,184 @@ export const profile = {
 export type ExperienceItem = {
   role: string;
   timeline: string;
+  location: string;
   isInternship: boolean;
-  company: { name: string; url: string };
+  company: { name: string; url?: string };
   bullets: string[];
 };
 
 export const experience: ExperienceItem[] = [
   {
-    role: "Founding Engineer",
-    timeline: "Sep 2023 — Sep 2025",
+    role: "AI Developer",
+    timeline: "June 2026 — Present",
+    location: "Hyderabad, India",
     isInternship: false,
-    company: { name: "Overhyped AI", url: "https://overhyped.ai" },
+    company: { name: "GaurData" },
     bullets: [
-      "AI Voice Agent Platform: architected and implemented an AI-powered voice assistant in Python using STT, TTS, RAG, and LLMs; handled multilingual conversations, human-AI handoff, visual context integration, and outbound call flows.",
-      "Led frontend & widget development: built and owned the complete frontend architecture using React, TypeScript, Zustand, and Webpack for the customer-facing dashboard and embeddable in-app widget used by end-users.",
-      "Prompt engineering: engineered, optimized, and iteratively refined prompts for high-accuracy, contextual, and dynamic AI interactions tailored to business use cases.",
-      "Built a FastAPI-based backend for automated order verification with Celery-based task scheduling, concurrency control, and a Python worker to manage real-time AI voice calls and status updates.",
-      "Marketing website: delivered the full customer-facing marketing site using Next.js in just 3 days to accelerate brand visibility and lead generation.",
+      "Designed and built high performance MCP endpoints and OpenAI compatible Chat APIs, exposing governed semantic data contracts as callable tools with sub second execution latency over analytical data stores.",
+      "Developed tool orchestration pipelines for ReAct agents, integrating hybrid semantic search and JSON Schema validation to eliminate fan out joins and chasm traps in LLM generated queries.",
     ],
   },
   {
-    role: "Full Stack Developer",
-    timeline: "Feb 2023 — Jul 2023",
-    isInternship: true,
-    company: { name: "Ai Palette", url: "https://aipalette.com" },
+    role: "Software Developer",
+    timeline: "May 2024 — June 2026",
+    location: "Hyderabad, India",
+    isInternship: false,
+    company: { name: "Factly Media and Research", url: "https://factly.in" },
     bullets: [
-      "Developed and implemented a personalized dashboard for customers, driving 85% of website traffic. Enhanced data analysis capabilities and improved time efficiency for users.",
-      "Developed a POC feature showcasing platform capabilities and insightful data, driving customer acquisition and seamless subscription transition.",
-      "Implemented a user-friendly interface allowing users to select specific ingredients and apply multiple filters for efficient data filtering and analysis.",
-      "Collaborated on UI/UX and bug fixes for a clean user experience; developed reusable components and contributed to Regional Analytics, Demography Analysis, and Related Trends features.",
+      "Built GoPie, a full stack multi dataset SQL agent platform using React.js, FastAPI featuring a natural language to SQL (NL2SQL) engine with semantic schema search via Qdrant, and support for DuckDB and ClickHouse OLAP backends.",
+      "Built a LangGraph / LangChain based workflow engine that orchestrates multi step chat reasoning, tool execution, semantic search, and SQL generation.",
+      "Established CI/CD pipelines for GenAI models using ArgoCD and GitOps.",
+      "Integrated semantic search with Qdrant vector embeddings for dataset schema retrieval, enabling contextual AI responses and accurate schema aware query generation.",
+      "Deployed LangSmith for end to end LLM observability, tracking multi turn reasoning traces, agent latency bottlenecks, token consumption, and tool call accuracy across the system.",
+      "Implemented multi tenancy support with organization/user context propagation throughout agent workflows, enabling secure isolation and audit trails for enterprise deployments.",
+      "Integrated FastEmbed and Model2Vec alongside cloud models to provide ultra fast, low latency schema embeddings, significantly cutting token costs and indexing latency.",
+      "Implemented autonomous error recovery and self healing loops that feed database execution errors back into the LLM context to iteratively refine and self correct invalid SQL queries.",
+      "Integrated Zitadel and Better Auth across enterprise applications, developing complete authentication/authorization flows with custom UI screens for login, registration, MFA, password recovery, and role based access, reducing user onboarding friction by 50% through intuitive UI flows, supporting seamless migration of 5,000+ users with zero downtime or security incidents.",
     ],
   },
   {
-    role: "Full Stack Developer",
-    timeline: "Apr 2022 — Jan 2023",
-    isInternship: true,
-    company: { name: "Spoonshot", url: "https://spoonshot.com" },
+    role: "Software Developer",
+    timeline: "March 2023 — May 2024",
+    location: "Hyderabad, India",
+    isInternship: false,
+    company: {
+      name: "Tata Consultancy Services (Client: London Stock Exchange Group)",
+      url: "https://www.tcs.com",
+    },
     bullets: [
-      "Leveraged historical time series data to analyze long-term trend evolution, aiding user decision-making across multiple years.",
-      "Implemented scalable data transformations using PySpark on ~1B records to extend the 'Concept Generator' feature from ingredient pairings to triplets.",
-      "Contributed to DevOps by setting up a resource-optimized staging environment; fine-tuned deployment sizing to run efficiently without increasing node pool usage.",
-      "Contributed to backend models, API endpoints, and frontend UI/UX fixes; helped develop reusable components and improve user experience.",
+      "Led development of metered AI usage billing for an enterprise SaaS platform by tracking PostgreSQL query execution metrics, syncing usage events, enabling accurate per organization LLM and OLAP consumption billing.",
+      "Architected an enterprise grade Retrieval Augmented Generation (RAG) platform, orchestrating LangChain, Azure OpenAI, and Redis Enterprise vector search (HNSW) to deliver sub second semantic retrieval across organizational knowledge bases.",
+      "Implemented 600+ end to end test cases in Playwright, standardizing testing and significantly reducing production defects.",
     ],
   },
 ];
 
 export const experienceQuote =
-  "Startups taught me speed, ownership, and resilience. I ship, learn, and improve without waiting for perfect conditions.";
+  "Production AI isn't just about prompts—it's about deterministic guardrails, low-latency data access, and continuous observability.";
 
 export type SkillGroup = { category: string; items: string[] };
 
 export const skills: SkillGroup[] = [
   {
-    category: "Frontend",
+    category: "AI Tools & Agentic Systems",
     items: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Zustand",
-      "JavaScript",
-      "Redux",
-      "Webpack",
-      "Vite",
-      "HTML",
-      "CSS",
+      "LangGraph",
+      "LangChain",
+      "Model Context Protocol (MCP)",
+      "ReAct loops",
+      "RAG",
+      "LLM Integrations",
+      "LangSmith",
+      "FastEmbed",
+      "Model2Vec",
+      "OpenAI Embeddings",
+      "Prompt Engineering",
+      "Qdrant",
     ],
   },
   {
-    category: "Backend",
-    items: ["Python", "Django", "FastAPI", "REST APIs", "Celery"],
+    category: "Languages",
+    items: ["Python", "JavaScript", "TypeScript", "SQL", "Java"],
   },
   {
-    category: "Databases",
-    items: ["MySQL", "PostgreSQL", "MongoDB", "Redis"],
+    category: "Frameworks & Backend",
+    items: [
+      "FAST API",
+      "Django",
+      "Spring Boot",
+      "REST API",
+      "Server-Sent Events (SSE)",
+    ],
   },
   {
-    category: "DevOps & Cloud",
-    items: ["Docker", "Kubernetes", "Helm", "Azure"],
+    category: "Frontend",
+    items: [
+      "React.js",
+      "Next.js",
+      "Tailwind CSS",
+      "Redux",
+      "Zustand",
+    ],
   },
   {
-    category: "AI",
-    items: ["Prompt Engineering", "Voice Agents (STT / LLM / TTS)", "RAG"],
+    category: "Databases & OLAP",
+    items: [
+      "DuckDB",
+      "ClickHouse",
+      "PostgreSQL",
+      "Redis (HNSW)",
+      "MySQL",
+    ],
   },
   {
-    category: "Other",
-    items: ["Node.js", "PySpark", "Solr", "Elasticsearch", "GCP", "AWS"],
+    category: "DevOps, Cloud & Testing",
+    items: [
+      "Docker",
+      "Kubernetes",
+      "GitOps",
+      "Argo CD",
+      "AWS",
+      "GCP",
+      "Git",
+      "Playwright",
+      "Sentry",
+      "Postman",
+    ],
   },
 ];
 
 export const skillsQuote =
-  "Tools change, but the ability to learn and adapt is the real skill I bring to the table.";
+  "Tools change, but the ability to architect resilient end-to-end systems from agentic workflows down to the database remains constant.";
+
+export type EducationItem = {
+  institution: string;
+  degree: string;
+  affiliation?: string;
+  location: string;
+  timeline: string;
+  grade?: string;
+};
+
+export const education: EducationItem[] = [
+  {
+    institution: "VNR VJIET",
+    degree: "B.Tech in Computer Science and Engineering",
+    affiliation: "Affiliated to JNTU(H)",
+    location: "Hyderabad, Telangana",
+    timeline: "Aug 2019 — March 2023",
+    grade: "GPA 8.6 / 10",
+  },
+];
+
+export type CredentialItem = {
+  title: string;
+  type: "Certification" | "Publication";
+  organization: string;
+  year?: string;
+  details?: string;
+};
+
+export const certificationsAndPublications: CredentialItem[] = [
+  {
+    title: "Oracle Cloud Infrastructure 2025 Certified Generative AI Professional",
+    type: "Certification",
+    organization: "Oracle",
+    year: "2025",
+  },
+  {
+    title: "Certified in Agile Software Development: Clean Code Practices",
+    type: "Certification",
+    organization: "Agile Software Development",
+  },
+  {
+    title: "Nationality Identification using Handwriting",
+    type: "Publication",
+    organization: "IOSR Journal of Computer Engineering",
+    year: "2023",
+    details: "ML research publication on handwriting-based nationality classification.",
+  },
+];
 
 export type Project = {
   title: string;
@@ -129,7 +218,7 @@ export type Project = {
   featured?: boolean;
 };
 
-// TODO(user): swap these out for your real projects.
+// Leave the projects section as it is as requested
 export const projects: Project[] = [
   {
     title: "AI Voice Agent Dashboard",
@@ -183,6 +272,7 @@ export const socials = [
   { label: "GitHub", href: profile.links.github, icon: "github" as const },
   { label: "LinkedIn", href: profile.links.linkedin, icon: "linkedin" as const },
   { label: "Email", href: `mailto:${profile.links.email}`, icon: "mail" as const },
+  { label: "Website", href: profile.links.website, icon: "globe" as const },
 ];
 
 export const navLinks = [
@@ -190,6 +280,7 @@ export const navLinks = [
   { href: "#about", label: "About" },
   { href: "#experience", label: "Experience" },
   { href: "#skills", label: "Skills" },
+  { href: "#education", label: "Education" },
   { href: "#projects", label: "Projects" },
   { href: "#contact", label: "Contact" },
 ];

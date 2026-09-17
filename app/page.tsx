@@ -1,4 +1,13 @@
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import {
+  ArrowRight,
+  Award,
+  Github,
+  Globe,
+  GraduationCap,
+  Linkedin,
+  Mail,
+  Phone,
+} from "lucide-react";
 import { ButtonLink } from "@/components/ui/button";
 import { RotatingRole } from "@/components/rotating-role";
 import { ProjectCard } from "@/components/project-card";
@@ -9,11 +18,19 @@ import {
   experienceQuote,
   skills,
   skillsQuote,
+  education,
+  certificationsAndPublications,
   projects,
   socials,
 } from "@/lib/data";
 
-const icons = { github: Github, linkedin: Linkedin, mail: Mail };
+const icons = {
+  github: Github,
+  linkedin: Linkedin,
+  mail: Mail,
+  globe: Globe,
+  phone: Phone,
+};
 
 export default function HomePage() {
   return (
@@ -31,7 +48,7 @@ export default function HomePage() {
         </h1>
 
         <p className="mt-6 max-w-2xl text-balance text-base leading-relaxed text-muted sm:text-lg">
-          {profile.bio[profile.bio.length - 1]}
+          {profile.bio[1]}
         </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -84,23 +101,32 @@ export default function HomePage() {
                 <h4 className="text-lg font-medium text-foreground">
                   {item.role}
                   <span className="text-muted"> · </span>
-                  <a
-                    href={item.company.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-accent transition-colors hover:underline"
-                  >
-                    {item.company.name}
-                  </a>
+                  {item.company.url ? (
+                    <a
+                      href={item.company.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-accent transition-colors hover:underline"
+                    >
+                      {item.company.name}
+                    </a>
+                  ) : (
+                    <span className="text-accent">{item.company.name}</span>
+                  )}
                   {item.isInternship && (
                     <span className="ml-2 rounded-full border border-border px-2 py-0.5 text-xs text-muted">
                       Internship
                     </span>
                   )}
                 </h4>
-                <span className="whitespace-nowrap text-xs tracking-wide text-muted">
-                  {item.timeline}
-                </span>
+                <div className="flex flex-col items-start text-xs text-muted sm:items-end">
+                  <span className="whitespace-nowrap tracking-wide">
+                    {item.timeline}
+                  </span>
+                  {item.location && (
+                    <span className="text-muted/70">{item.location}</span>
+                  )}
+                </div>
               </div>
               <ul className="mt-3 space-y-2 text-sm leading-relaxed text-muted">
                 {item.bullets.map((bullet, i) => (
@@ -152,7 +178,90 @@ export default function HomePage() {
         </p>
       </section>
 
-      {/* Projects Section */}
+      {/* Education & Credentials Section */}
+      <section id="education" className="mx-auto w-full max-w-content px-6 py-20">
+        <header className="mb-14">
+          <p className="mb-3 text-sm font-medium tracking-[0.3em] text-muted">
+            CREDENTIALS
+          </p>
+          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            Education & Certifications
+          </h2>
+        </header>
+
+        <div className="grid gap-8 lg:grid-cols-2">
+          {/* Education */}
+          <div>
+            <h3 className="mb-4 flex items-center gap-2 text-base font-medium tracking-wide text-foreground">
+              <GraduationCap size={18} className="text-accent" />
+              Education
+            </h3>
+            <div className="space-y-4">
+              {education.map((edu) => (
+                <div
+                  key={edu.institution}
+                  className="rounded-lg border border-border bg-surface/30 p-5 transition-colors hover:border-accent/40"
+                >
+                  <div className="flex flex-wrap items-baseline justify-between gap-2">
+                    <h4 className="text-base font-medium text-foreground">
+                      {edu.degree}
+                    </h4>
+                    <span className="whitespace-nowrap text-xs text-muted">
+                      {edu.timeline}
+                    </span>
+                  </div>
+                  <p className="mt-1 text-sm text-accent">{edu.institution}</p>
+                  {edu.affiliation && (
+                    <p className="mt-0.5 text-xs text-muted">{edu.affiliation}</p>
+                  )}
+                  <div className="mt-4 flex flex-wrap items-center justify-between gap-2 text-xs text-muted">
+                    <span>{edu.location}</span>
+                    {edu.grade && (
+                      <span className="rounded-full border border-accent/30 bg-accent/10 px-2.5 py-0.5 font-mono text-accent">
+                        {edu.grade}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Certifications & Publications */}
+          <div>
+            <h3 className="mb-4 flex items-center gap-2 text-base font-medium tracking-wide text-foreground">
+              <Award size={18} className="text-accent" />
+              Certifications & Publications
+            </h3>
+            <div className="space-y-4">
+              {certificationsAndPublications.map((item) => (
+                <div
+                  key={item.title}
+                  className="rounded-lg border border-border bg-surface/30 p-5 transition-colors hover:border-accent/40"
+                >
+                  <div className="flex items-center gap-2">
+                    <span className="rounded-full border border-border px-2 py-0.5 text-[10px] uppercase tracking-wider text-muted">
+                      {item.type}
+                    </span>
+                    {item.year && (
+                      <span className="text-xs text-muted">{item.year}</span>
+                    )}
+                  </div>
+                  <h4 className="mt-2 text-sm font-medium text-foreground">
+                    {item.title}
+                  </h4>
+                  <p className="mt-1 text-xs text-accent">{item.organization}</p>
+                  {item.details && (
+                    <p className="mt-2 text-xs text-muted">{item.details}</p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section - Preserved as requested */}
       <section id="projects" className="mx-auto w-full max-w-content px-6 py-20">
         <header className="mb-14">
           <p className="mb-3 text-sm font-medium tracking-[0.3em] text-muted">WORK</p>
@@ -182,8 +291,8 @@ export default function HomePage() {
             Contact
           </h2>
           <p className="mt-4 max-w-2xl text-muted">
-            Have a project in mind or just want to say hello? Send a message or
-            reach out directly.
+            Have an exciting opportunity, project in mind, or just want to say
+            hello? Send a message or reach out directly.
           </p>
         </header>
 
@@ -212,6 +321,21 @@ export default function HomePage() {
                 );
               })}
             </ul>
+
+            {profile.links.phone && (
+              <div className="mt-8 border-t border-border pt-6">
+                <p className="text-xs font-mono uppercase tracking-wider text-muted">
+                  Phone
+                </p>
+                <a
+                  href={`tel:${profile.links.phone.replace(/[^+\d]/g, "")}`}
+                  className="mt-1.5 inline-flex items-center gap-2 text-sm text-foreground transition-colors hover:text-accent"
+                >
+                  <Phone size={16} className="text-accent" />
+                  {profile.links.phone}
+                </a>
+              </div>
+            )}
           </div>
         </div>
       </section>
