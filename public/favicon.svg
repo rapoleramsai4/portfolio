@@ -1,9 +1,25 @@
-<svg viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M664.006 471.455L522.113 340.7C642.814 232.965 567.261 71.8232 500 71.8232C443.823 71.8232 407.862 162.082 407.862 200.756C407.862 261.529 430.712 321.343 500 380.295L664.928 521.16C736.796 586.537 793 645.469 793 767.937C793 996.298 548.833 1000 500 1000C451.167 1000 207 955.801 207 767.956C207 617.68 292.996 545.734 335.994 528.545L477.887 659.3C357.186 767.035 432.739 928.177 500 928.177C556.177 928.177 592.138 837.919 592.138 799.245C592.138 738.471 569.288 678.657 500 619.705L335.072 478.84C263.204 413.463 207 354.531 207 232.063C207 3.70212 451.167 0 500 0C548.833 0 793 44.1989 793 232.044C793 382.32 707.004 454.266 664.006 471.455Z" />
-    <style>
-        path { fill: #000; }
-        @media (prefers-color-scheme: dark) {
-            path { fill: #FFF; }
-        }
-    </style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7E7CE" />
+      <stop offset="45%" stop-color="#C9A572" />
+      <stop offset="100%" stop-color="#A27D46" />
+    </linearGradient>
+    <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C9A572" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#C9A572" stop-opacity="0.1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Dark obsidian background squircle matching portfolio theme -->
+  <rect width="512" height="512" rx="124" fill="#0B0C10" />
+  <rect x="14" y="14" width="484" height="484" rx="110" fill="none" stroke="url(#border-grad)" stroke-width="8" />
+
+  <!-- Precisely centered modern tech monogram R -->
+  <path
+    fill="url(#gold-grad)"
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M128 120 C128 111.163 135.163 104 144 104 H274 C335.856 104 386 154.144 386 216 C386 263.856 355.892 304.685 313.541 320.505 L384.643 392.684 C390.946 399.083 390.775 409.288 384.262 415.474 C377.749 421.66 367.37 421.488 361.067 415.089 L278.495 331.053 H196 V396 C196 404.837 188.837 412 180 412 H144 C135.163 412 128 404.837 128 396 V120 Z M196 168 V267 H274 C302.167 267 325 244.167 325 216 C325 187.833 302.167 168 274 168 H196 Z"
+  />
 </svg>

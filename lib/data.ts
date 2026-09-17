@@ -1,6 +1,6 @@
 export const profile = {
   name: "Ramsai Rapole",
-  logo: "RAMSAI",
+  logo: "RR",
   title: "AI & Software Developer",
   description:
     "Software Developer with 3+ years of experience architecting enterprise grade Agentic AI systems, NL2SQL platforms, and high performance Retrieval Augmented Generation (RAG) pipelines.",
@@ -8,7 +8,7 @@ export const profile = {
     "AI Developer",
     "Software Developer",
     "Agentic AI Engineer",
-    "Full-Stack Developer",
+    "Full Stack Developer",
   ],
   bio: [
     "Welcome!",
@@ -16,7 +16,7 @@ export const profile = {
     "I specialize in building production ready autonomous workflows using LangGraph, ReAct loops, and Model Context Protocol (MCP), backed by scalable OLAP engines (DuckDB, ClickHouse) and vector databases (Qdrant, Redis HNSW). Skilled in full stack orchestration with Python (FastAPI) and modern frontends, integrating end to end LLM observability via LangSmith, and deploying secure, multi-tenant GenAI solutions via GitOps and Kubernetes.",
   ],
   quote:
-    "Building autonomous agentic workflows and production AI platforms has shown me that reliability, deterministic guardrails, and low-latency data pipelines are what turn AI into real business value.",
+    "Building autonomous agentic workflows and production AI platforms has shown me that reliability, deterministic guardrails, and low latency data pipelines are what turn AI into real business value.",
   links: {
     linkedin: "https://www.linkedin.com/in/rapoleramsai",
     github: "https://github.com/rapoler",
@@ -84,7 +84,7 @@ export const experience: ExperienceItem[] = [
 ];
 
 export const experienceQuote =
-  "Production AI isn't just about prompts—it's about deterministic guardrails, low-latency data access, and continuous observability.";
+  "Production AI isn't just about prompts, it's about deterministic guardrails, low latency data access, and continuous observability.";
 
 export type SkillGroup = { category: string; items: string[] };
 
@@ -158,7 +158,7 @@ export const skills: SkillGroup[] = [
 ];
 
 export const skillsQuote =
-  "Tools change, but the ability to architect resilient end-to-end systems from agentic workflows down to the database remains constant.";
+  "Tools change, but the ability to architect resilient end to end systems from agentic workflows down to the database remains constant.";
 
 export type EducationItem = {
   institution: string;
